@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+
+:host {
+  @media (max-width: $mobile-breakpoint) {
+    width: 44%;
+    margin: 3%;
+  }
+
+  @media (min-width: calc(#{$mobile-breakpoint} + 1px)) and (max-width: $tablet-breakpoint) {
+    width: 29%;
+    margin: 1.5%;
+  }
+
+  @media (min-width: calc(#{$tablet-breakpoint + 1})) and (max-width: $desktop-breakpoint){
+    width: 20%;
+    margin: 2%;
+  }
+
+  @media (min-width: calc(#{$desktop-breakpoint + 1})) {
+    width: 14%;
+    margin: 1%;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__image{
+    margin: 10px;
+  }
+
+  &__price {
+    text-align: right;
+  }
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  overflow: auto;
+  background-color:  rgba(180, 190, 218, 0.5);
+
+  .popup-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #000000;
+  }
+}
+

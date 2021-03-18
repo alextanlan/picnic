@@ -1,0 +1,18 @@
+<a *ngIf="isMobile" class="back" [routerLink]="['/list']"> << Back to the list</a>
+
+<div class="product" *ngIf="!isLoading; else spinner">
+  <ng-container *ngIf="isError; else cardContent">
+    <h3>Some error occurred, please try later</h3>
+  </ng-container>
+</div>
+
+<ng-template #cardContent>
+  <div class="name">{{product.name}}</div>
+  <div *ngIf="product.description" class="description">{{product.description}}</div>
+  <img lazy-resource [src]="product.image" alt="Product image" class="image">
+  <div class="price">Price: {{product.price}}</div>
+</ng-template>
+
+<ng-template #spinner>
+  <div class="spinner">Here should be a spinner..</div>
+</ng-template>

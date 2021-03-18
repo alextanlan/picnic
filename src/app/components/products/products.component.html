@@ -1,0 +1,12 @@
+<div class="search">
+  <input class="search-input"
+         placeholder="Type to search"
+         [(ngModel)]="searchQuery">
+</div>
+
+<div class="container">
+  <app-product *ngFor="let product of products$ | async | filter : searchQuery; trackBy: getId"
+               [product]="product"
+               class="product">
+  </app-product>
+</div>

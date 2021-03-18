@@ -1,0 +1,13 @@
+<div class="card" (click)="onClick()">
+  <div class="card__name">{{product.name}}</div>
+  <div *ngIf="product?.description" class="card__description">{{product.description}}</div>
+  <img lazy-resource [src]="product.image" alt="Product image" class="card__image">
+  <div class="card__price">Price: {{product.price}}</div>
+</div>
+
+<div class="popup" *ngIf="needsToShowPopup">
+  <button class="close-btn" (click)="closePopup()">X</button>
+  <div class="popup-content">
+    <app-product-details [product]="product"></app-product-details>
+  </div>
+</div>
